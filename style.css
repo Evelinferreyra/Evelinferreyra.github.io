@@ -1,7 +1,7 @@
 /* estilos.css */
 body {
     font-family: 'Press Start 2P', cursive; 
-    background-color: #f0f8ff; /* Color de fondo claro */
+    background-image: url('assets/cuadros.jpg');
     color: #333; /* Color de texto principal */
     text-align: center;
     margin: 0;
@@ -11,12 +11,12 @@ body {
 
 
 h1 {
-    color: #6a0dad; /* Color violeta para el título */
-    text-shadow: 3px 3px #50fa7b; /* Sombra verde para darle un efecto resaltado */
+    color: #000000; /* Color violeta para el título */
+    text-shadow: 3px 3px #c69de4; /* Sombra verde para darle un efecto resaltado */
 }
 
 div {
-    background-color: linear-gradient (to buttom right, #fff, #f0f8ff);
+    background: linear-gradient(to bottom right, #ff91c8, #f7f7f7);
     border-radius: 10px; /* Bordes redondeados */
     margin: 20px auto; /* Centrar los divs */
     padding: 20px;
@@ -38,7 +38,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #50fa7b; /* Fondo verde para los botones */
+    background-color: #28ce54; /* Fondo verde para los botones */
     border: none; /* Quitar el borde predeterminado */
     border-radius: 20px; /* Bordes redondeados para los botones */
     color: white; /* Texto blanco para que contraste con el fondo */
@@ -46,12 +46,12 @@ button {
     text-transform: uppercase; /* Texto en mayúsculas */
     margin: 10px; /* Espaciado alrededor de los botones */
     cursor: pointer; /* Cursor en forma de mano al pasar sobre los botones */
-    box-shadow: 4px 4px #6a0dad; /* Sombra violeta para los botones */
+    box-shadow: 4px 4px #c69de4; /* Sombra violeta para los botones */
     transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
 }
 
 button:hover {
-    background-color: #6a0dad; /* Cambiar a color violeta al pasar el mouse */
+    background-color: #ad0d85; /* Cambiar a color violeta al pasar el mouse */
 }
 
 #resultado {
