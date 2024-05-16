@@ -1,33 +1,55 @@
-class NumeroComplejo {
-    constructor(real, imaginario) {
-      this.real = real;
-      this.imaginario = imaginario;
-    }
-  
-    // Método para multiplicar dos números complejos
-    multiplicar(otro) {
-      return new NumeroComplejo(
-        this.real * otro.real - this.imaginario * otro.imaginario,
-        this.real * otro.imaginario + this.imaginario * otro.real
-      );
-    }
-  
-    // Método para obtener la potencia de i
-    static potenciaDeI(n) {
-      // Las potencias de i se repiten cada 4, así que usamos módulo 4 para simplificar
-      switch (n % 4) {
-        case 0: return new NumeroComplejo(1, 0); // i^0 = 1
-        case 1: return new NumeroComplejo(0, 1); // i^1 = i
-        case 2: return new NumeroComplejo(-1, 0); // i^2 = -1
-        case 3: return new NumeroComplejo(0, -1); // i^3 = -i
-      }
-    }
-  
-    toString() {
-      return `${this.real} + ${this.imaginario}i`;
-    }
-  }
-  
-  // Ejemplo de uso:
-  let potencia = NumeroComplejo.potenciaDeI(5);
-  console.log(`i a la 5 es: ${potencia.toString()}`); // Debería ser igual a i
+function sumar() {
+    var real1 = parseFloat(document.getElementById('real1').value);
+    var imag1 = parseFloat(document.getElementById('imag1').value);
+    var real2 = parseFloat(document.getElementById('real2').value);
+    var imag2 = parseFloat(document.getElementById('imag2').value);
+
+    var resultadoReal = real1 + real2;
+    var resultadoImag = imag1 + imag2;
+
+    mostrarResultado(resultadoReal, resultadoImag);
+}
+
+function restar() {
+    var real1 = parseFloat(document.getElementById('real1').value);
+    var imag1 = parseFloat(document.getElementById('imag1').value);
+    var real2 = parseFloat(document.getElementById('real2').value);
+    var imag2 = parseFloat(document.getElementById('imag2').value);
+
+    var resultadoReal = real1 - real2;
+    var resultadoImag = imag1 - imag2;
+
+    mostrarResultado(resultadoReal, resultadoImag);
+}
+
+function multiplicar() {
+
+    //declara variables para reales e imaginarios
+    var real1 = parseFloat(document.getElementById('real1').value);
+    var imag1 = parseFloat(document.getElementById('imag1').value);
+    var real2 = parseFloat(document.getElementById('real2').value);
+    var imag2 = parseFloat(document.getElementById('imag2').value);
+
+    var resultadoReal = (real1 * real2) - (imag1 * imag2);
+    var resultadoImag = (real1 * imag2) + (real2 * imag1);
+
+    mostrarResultado(resultadoReal, resultadoImag);
+}
+
+function dividir() {
+    var real1 = parseFloat(document.getElementById('real1').value);
+    var imag1 = parseFloat(document.getElementById('imag1').value);
+    var real2 = parseFloat(document.getElementById('real2').value);
+    var imag2 = parseFloat(document.getElementById('imag2').value);
+
+    var denominador = (real2 * real2) + (imag2 * imag2);
+    var resultadoReal = ((real1 * real2) + (imag1 * imag2)) / denominador;
+    var resultadoImag = ((imag1 * real2) - (real1 * imag2)) / denominador;
+
+    mostrarResultado(resultadoReal, resultadoImag);
+}
+
+function mostrarResultado(real, imag) {
+    document.getElementById('resultado').innerText = 'Resultado: ' + real + ' + ' + imag + 'i';
+}
+

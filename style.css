@@ -1,0 +1,62 @@
+/* estilos.css */
+body {
+    font-family: 'Press Start 2P', cursive; 
+    background-color: #f0f8ff; /* Color de fondo claro */
+    color: #333; /* Color de texto principal */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #6a0dad; /* Color violeta para el título */
+    text-shadow: 3px 3px #50fa7b; /* Sombra verde para darle un efecto resaltado */
+}
+
+div {
+    background-color: #fff; /* Fondo blanco para los contenedores */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px auto; /* Centrar los divs */
+    padding: 20px;
+    width: 80%; /* Ancho del contenedor */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Sombra para darle profundidad */
+}
+
+label {
+    display: block; /* Hacer que las etiquetas se muestren en su propia línea */
+    margin: 10px 0; /* Espaciado alrededor de las etiquetas */
+}
+
+input[type="text"] {
+    border: 1px solid #ddd; /* Borde sutil para los inputs */
+    border-radius: 5px; /* Bordes redondeados para los inputs */
+    padding: 10px;
+    margin-bottom: 20px; /* Espaciado debajo de los inputs */
+    width: calc(50% - 22px); /* Ancho de los inputs */
+}
+
+button {
+    background-color: #50fa7b; /* Fondo verde para los botones */
+    border: none; /* Quitar el borde predeterminado */
+    border-radius: 20px; /* Bordes redondeados para los botones */
+    color: white; /* Texto blanco para que contraste con el fondo */
+    padding: 10px 20px; /* Espaciado interno para los botones */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    margin: 10px; /* Espaciado alrededor de los botones */
+    cursor: pointer; /* Cursor en forma de mano al pasar sobre los botones */
+    box-shadow: 4px 4px #6a0dad; /* Sombra violeta para los botones */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+button:hover {
+    background-color: #6a0dad; /* Cambiar a color violeta al pasar el mouse */
+}
+
+#resultado {
+    color: #6a0dad; /* Color violeta para el texto del resultado */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Importar la fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
