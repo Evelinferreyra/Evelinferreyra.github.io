@@ -8,13 +8,15 @@ body {
     padding: 0;
 }
 
+
+
 h1 {
     color: #6a0dad; /* Color violeta para el título */
     text-shadow: 3px 3px #50fa7b; /* Sombra verde para darle un efecto resaltado */
 }
 
 div {
-    background-color: #fff; /* Fondo blanco para los contenedores */
+    background-color: linear-gradient (to buttom right, #fff, #f0f8ff);
     border-radius: 10px; /* Bordes redondeados */
     margin: 20px auto; /* Centrar los divs */
     padding: 20px;
@@ -57,6 +59,21 @@ button:hover {
     padding: 20px;
     margin-top: 20px;
 }
+
+
+input[type="text"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px; /* Reducir el padding para que el input sea más compacto */
+    margin-bottom: 10px; /* Reducir el espacio entre los inputs */
+    width: calc(30% - 22px); /* Reducir el ancho del input */
+}
+
+div {
+    padding: 15px; /* Aumentar ligeramente el padding del contenedor */
+    width: 60%; /* Ajustar el ancho del contenedor */
+}
+
 
 /* Importar la fuente de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
