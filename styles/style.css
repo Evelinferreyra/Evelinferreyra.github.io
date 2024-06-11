@@ -1,7 +1,7 @@
 /* estilos.css */
 body {
     font-family: 'Press Start 2P', cursive; 
-    background-image: url('assets/cuadros.jpg');
+    background: url("/assets/cuadrao.jpg") no-repeat center center fixed;
     color: #333; /* Color de texto principal */
     text-align: center;
     margin: 0;
