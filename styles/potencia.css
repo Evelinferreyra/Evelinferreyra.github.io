@@ -1,54 +1,71 @@
-.container {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 50px auto;
-    width: 400px; /* Hacer el contenedor cuadrado */
-    display: flex; /* Utilizar flexbox para centrar verticalmente */
-    flex-direction: column; /* Alinear elementos verticalmente */
-    justify-content: center; /* Centrar verticalmente */
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    background-image:url(fondo.jpg);
+    
 }
 
-/* Centrar horizontalmente el contenido */
-.container * {
-    margin: auto;
+.container {
+    width: 70%;
+    margin: 30px auto;
+    background: linear-gradient(to bottom right, #ff91c8, #f7f7f7);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 20px;
 }
 
 h1 {
-    color: #fff;
-    text-shadow: 2px 2px #000;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #ffcccb; /* Fondo rosa */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .input-container {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-input[type="number"] {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 8px;
+label {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 button {
-    background-color: #ff0099;
-    border: none;
-    border-radius: 20px;
-    color: white;
     padding: 10px 20px;
-    text-transform: uppercase;
-    margin: 10px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 4px 4px #cc0066;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.6); /* Sombra rosa */
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #cc0066;
+    box-shadow: 0 6px 12px rgba(255, 105, 180, 0.8); /* Sombra rosa más intensa al pasar el mouse */
 }
 
 #result {
-    color: #fff;
-    text-shadow: 1px 1px #000;
+    margin-top: 20px;
+    font-size: 18px;
 }
 

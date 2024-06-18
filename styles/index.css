@@ -1,58 +1,91 @@
-/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
     margin: 0;
     padding: 0;
+    background-image:url(fondo.jpg);
+    
 }
 
-header {
-    background-color: #333;
-    color: #fff;
+.container {
+    width: 70%;
+    margin: 30px auto;
+    background: linear-gradient(to bottom right, #ff91c8, #f7f7f7);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 20px;
 }
 
-header h1 {
-    margin: 0;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.header h1 {
+    color: #000000;
+    text-shadow: 3px 3px #c69de4;
+    margin-left: 200px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.logo img {
+    margin-right: 200px;
+    height: 150px;
 }
 
-nav ul li a {
-    color: #fff;
+.content h2 {
+    text-align: center;
+    color: #333;
+}
+
+button {
+
+    background-color: #28ce54; /* Fondo verde para los botones */
+    border: none; /* Quitar el borde predeterminado */
+    border-radius: 20px; /* Bordes redondeados para los botones */
+    color: white; /* Texto blanco para que contraste con el fondo */
+    padding: 10px 20px; /* Espaciado interno para los botones */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    margin-left: 200px; /* Espaciado alrededor de los botones */
+    cursor: pointer; /* Cursor en forma de mano al pasar sobre los botones */
+    box-shadow: 4px 4px #c69de4; /* Sombra violeta para los botones */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.section p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.todo .step, .include-ai .ai-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.step img, .ai-step img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #ffbb00;
     text-decoration: none;
 }
 
-section {
-    padding: 40px;
-}
-
-/* Estilos para la sección principal */
-.main-section {
-    background-color: #f0f0f0;
-    text-align: center;
-}
-
-/* Estilos para la galería de imágenes */
-.gallery {
-    background-color: #fff;
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.image-container img {
-    width: 200px;
-    margin: 10px;
-}
