@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcular Logaritmo</title>
+  <link rel="stylesheet" href="views/logaritmo.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Calcular Logaritmo</h1>
+    <div class="form-group">
+      <label for="num">Número (x):</label>
+      <input type="number" id="num" placeholder="Introduce el número (x)">
+    </div>
+    <div class="form-group">
+      <label for="base">Base (b):</label>
+      <input type="number" id="base" placeholder="Introduce la base (b)">
+    </div>
+    <button onclick="calcularLogaritmo()">Calcular Logaritmo</button>
+    <div class="result" id="resultadoLogaritmo"></div>
+  </div>
+
+  <script>
+    function calcularLogaritmo() {
+      const x = parseFloat(document.getElementById('num').value);
+      const b = parseFloat(document.getElementById('base').value);
+
+      if (isNaN(x) || isNaN(b) || x <= 0 || b <= 0 || b === 1) {
+        document.getElementById('resultadoLogaritmo').innerText = "Introduce un número positivo y una base válida (mayor que 0 y diferente de 1).";
+        return;
+      }
+
+      const logResult = Math.log(x) / Math.log(b);
+      document.getElementById('resultadoLogaritmo').innerText = `El logaritmo de ${x} en base ${b} es: ${logResult.toFixed(4)}`;
+    }
+  </script>
+</body>
+</html>

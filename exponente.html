@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversión de Exponente a Logaritmo</title>
+  <link rel="stylesheet" href="views/exponente.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Conversión de Exponente a Logaritmo</h1>
+    <div class="form-group">
+      <label for="base">Base (b):</label>
+      <input type="number" id="base" placeholder="Introduce la base (b)">
+    </div>
+    <div class="form-group">
+      <label for="resultado">Resultado (x):</label>
+      <input type="number" id="resultado" placeholder="Introduce el resultado (x)">
+    </div>
+    <button onclick="convertirExponenteALogaritmo()">Calcular Logaritmo</button>
+    <div class="result" id="resultadoLogaritmo"></div>
+  </div>
+
+  <script>
+    function convertirExponenteALogaritmo() {
+      const base = parseFloat(document.getElementById('base').value);
+      const resultado = parseFloat(document.getElementById('resultado').value);
+
+      if (isNaN(base) || isNaN(resultado) || base <= 0 || base === 1) {
+        document.getElementById('resultadoLogaritmo').innerText = "Introduce una base válida (mayor que 0 y diferente de 1).";
+        return;
+      }
+
+      const logaritmo = Math.log(resultado) / Math.log(base);
+      document.getElementById('resultadoLogaritmo').innerText = `El logaritmo de ${resultado} en base ${base} es: ${logaritmo.toFixed(4)}`;
+    }
+  </script>
+</body>
+</html>

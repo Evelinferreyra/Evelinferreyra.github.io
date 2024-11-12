@@ -1,0 +1,91 @@
+/* Estilo general para logaritmo.html */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7d7f3;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 700px; /* Aumentado el ancho del contenedor */
+    padding: 40px; /* Aumentado el padding */
+    border-radius: 15px;
+    background-color: #fde3f8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 2.2em; /* Aumentado el tamaño del título */
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .star-icon {
+    font-size: 3em;
+    color: #ff66c4;
+    margin: 10px 0;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 30px; /* Más espacio entre cada input */
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.1em;
+  }
+  
+  input[type="number"] {
+    width: 600px;
+    padding: 15px 20px; /* Más padding para agrandar el campo */
+    padding-left: 60px; /* Más espacio para la imagen de la estrella */
+    font-size: 1.1em;
+    border: 2px solid #333;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  /* Espacio para agregar la imagen de estrella dentro del input */
+  .form-group .star {
+    position: absolute;
+    left: 15px; /* Ajustado para que quede espacio para una imagen */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+    color: #ffb6f0;
+  }
+  
+  /* Botón de calcular */
+  button {
+    padding: 12px 30px;
+    color: #fff;
+    background-color: #ff66c4;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff80ce;
+  }
+  
+  .result {
+    margin-top: 25px;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
