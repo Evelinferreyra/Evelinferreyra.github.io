@@ -7,10 +7,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #1e1b34, #302447);
+  background: url('fondo.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed; 
   color: #fff;
   overflow-x: hidden;
 }
+
 
 .container {
   display: flex;
@@ -21,58 +25,29 @@ body {
 
 /* Header */
 .header-background {
+  
   width: 100%;
   text-align: center;
-  padding: 50px 20px;
-  background: radial-gradient(circle at center, #4d2a71, #241b3a);
+  padding: 10px 20px;  
   position: relative;
   overflow: hidden;
-  animation: wave 6s infinite ease-in-out;
-  border-bottom: 5px solid rgba(0, 255, 135, 0.2);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-.header-background::before,
-.header-background::after {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200px;
-  background: rgba(0, 255, 135, 0.1);
-  top: -50px;
-  left: -50%;
-  border-radius: 50%;
-  animation: float 8s infinite ease-in-out alternate;
-}
-
-@keyframes wave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes float {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
+  
 }
 
 .logo {
-  width: 100px;
-  margin-bottom: 20px;
+  width: 70%;
+
 }
 
 .title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: #e0ffe4;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-  margin: 0;
+  font-size: 3.5rem;
+  color: #ffffff;
+
+  
 }
 
-.description {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #d6d6f5;
-}
+
 
 /* Botones */
 .buttons {
@@ -86,7 +61,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 15px 30px;
-  background: linear-gradient(135deg, #4a71d4, #2bd9a2);
+  background: linear-gradient(135deg, #8325a8, #08012e);
   color: #fff;
   text-decoration: none;
   border-radius: 50px;
@@ -99,13 +74,13 @@ body {
 
 .button:hover {
   transform: translateY(-5px);
-  background: linear-gradient(135deg, #7f9cfb, #61f0c4);
-  box-shadow: 0 8px 20px rgba(0, 255, 135, 0.3);
+  background: linear-gradient(135deg, #08012e, #8325a8);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
 .star-icon {
   font-size: 1.2rem;
-  color: #d6ffdd;
+  color: #ffffff;
 }
 
 /* Animaciones adicionales */
@@ -117,33 +92,36 @@ body {
 /* Sección de información sobre logaritmos */
 .info-logaritmo {
   width: 80%;
-  margin-top: 60px;
+ 
   padding: 30px;
-  background-color: #241b3a;
+  background-color: #0000008e;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 253, 253, 0.5);
   text-align: left;
   animation: fadeIn 1s ease-out;
 }
 
 .info-logaritmo h2 {
   font-size: 2rem;
-  color: #d6ffdd;
+  color: #ffffff;
   margin-bottom: 20px;
   text-align: center;
+  text-shadow: 1px #000000;
 }
 
 .info-logaritmo h3 {
   font-size: 1.4rem;
-  color: #e0ffe4;
+  color: #ffffff;
   margin-top: 20px;
+  text-shadow: 1px #000000;
 }
 
 .info-logaritmo p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #d6d6f5;
+  color: #ffffff;
   margin-top: 10px;
+  text-shadow: 1px #000000;
 }
 
 /* Animación para la entrada de la sección */
