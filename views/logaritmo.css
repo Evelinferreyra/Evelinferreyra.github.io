@@ -1,91 +1,163 @@
-/* Estilo general para logaritmo.html */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f7d7f3;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  background: linear-gradient(145deg, #0f3460, #16213e);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  animation: scaleIn 0.8s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #00d2ff, #3a7bd5);
+  transform: translateX(-50%);
+  border-radius: 10px;
+  animation: slideIn 1s ease-out;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  position: relative;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+  color: #c4c4c4;
+}
+
+input {
+  width: 350px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Button */
+button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Result */
+.result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(145deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animations */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  
-  .container {
-    text-align: center;
-    max-width: 700px; /* Aumentado el ancho del contenedor */
-    padding: 40px; /* Aumentado el padding */
-    border-radius: 15px;
-    background-color: #fde3f8;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
   h1 {
-    font-size: 2.2em; /* Aumentado el tamaño del título */
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
+    font-size: 2rem;
   }
-  
-  .star-icon {
-    font-size: 3em;
-    color: #ff66c4;
-    margin: 10px 0;
+
+  input, button {
+    font-size: 0.9rem;
+    padding: 10px;
   }
-  
-  .form-group {
-    position: relative;
-    margin-bottom: 30px; /* Más espacio entre cada input */
-    text-align: left;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-    font-size: 1.1em;
-  }
-  
-  input[type="number"] {
-    width: 600px;
-    padding: 15px 20px; /* Más padding para agrandar el campo */
-    padding-left: 60px; /* Más espacio para la imagen de la estrella */
-    font-size: 1.1em;
-    border: 2px solid #333;
-    border-radius: 30px;
-    background-color: #ffffff;
-    color: #333;
-  }
-  
-  /* Espacio para agregar la imagen de estrella dentro del input */
-  .form-group .star {
-    position: absolute;
-    left: 15px; /* Ajustado para que quede espacio para una imagen */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.8em;
-    color: #ffb6f0;
-  }
-  
-  /* Botón de calcular */
+
   button {
-    padding: 12px 30px;
-    color: #fff;
-    background-color: #ff66c4;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px;
   }
-  
-  button:hover {
-    background-color: #ff80ce;
-  }
-  
-  .result {
-    margin-top: 25px;
-    font-size: 1.2em;
-    color: #333;
-  }
-  
+}

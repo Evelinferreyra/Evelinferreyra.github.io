@@ -5,20 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Logaritmos y Exponentes</title>
   <link rel="stylesheet" href="views/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
+    <!-- Header con animación ondulada -->
     <div class="header-background">
-      <img src="img/logaritmo.png" alt="logaritmo">
-      <h1>Logaritmos</h1>
-      <p>¿Qué es un logaritmo?</p>
+      <img src="img/logaritmo.png" alt="Logaritmo" class="logo">
+      <h1 class="title">Logaritmos</h1>
+      <p class="description">Descubre el fascinante mundo de los logaritmos y exponentes.</p>
     </div>
+
+    <!-- Sección de información sobre logaritmos (ahora arriba de los botones) -->
+    <section id="info-logaritmo" class="info-logaritmo">
+      <h2>¿Qué es un Logaritmo?</h2>
+      <p>Un logaritmo es la operación inversa de la potenciación. Si tenemos una ecuación como <strong>a^b = c</strong>, el logaritmo de <strong>c</strong> en base <strong>a</strong> es el valor de <strong>b</strong>. En otras palabras, el logaritmo de un número responde a la pregunta: ¿A qué exponente debe elevarse la base para obtener ese número?</p>
+      <h3>¿De dónde surgen los logaritmos?</h3>
+      <p>Los logaritmos fueron introducidos en el siglo XVII por el matemático John Napier, quien buscaba simplificar los cálculos matemáticos, especialmente los relacionados con la multiplicación y división de números grandes, transformándolos en sumas y restas.</p>
+      <h3>¿Cómo calcular un logaritmo?</h3>
+      <p>Para calcular un logaritmo, utilizamos la fórmula: <strong>log<sub>a</sub>(b) = x</strong>, donde <strong>a</strong> es la base, <strong>b</strong> es el número del que queremos obtener el logaritmo, y <strong>x</strong> es el exponente al cual debemos elevar la base para obtener <strong>b</strong>.</p>
+      <p>Por ejemplo, si tienes el logaritmo log<sub>10</sub>(1000), debes encontrar el valor de <strong>x</strong> tal que 10<sup>x</sup> = 1000. En este caso, el valor de <strong>x</strong> es 3.</p>
+    </section>
+
+    <!-- Botones con animación -->
     <div class="buttons">
       <a href="exponente.html" class="button">
-        <span class="star-icon"></span> Exponente
+        <span class="star-icon">⭐</span> Exponente
       </a>
       <a href="logaritmo.html" class="button">
-        <span class="star-icon"></span> Logaritmo
+        <span class="star-icon">⭐</span> Logaritmo
       </a>
     </div>
   </div>
