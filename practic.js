@@ -1,42 +1,42 @@
-document.getElementById('checkAnswers').addEventListener('click', function () {
-    const selects = document.querySelectorAll('.log-select');
-    const inputs = document.querySelectorAll('.log-input');
-    let allCorrect = true;
+document.querySelectorAll('.explanation-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const explanation = this.nextElementSibling; // Div de explicación
+        explanation.classList.toggle('hidden'); // Alternar visibilidad de la explicación
 
-    // Verificar selects
-    selects.forEach(select => {
-        const userAnswer = select.value;
-        const correctAnswer = select.getAttribute('data-answer');
-
-        if (userAnswer === correctAnswer) {
-            select.style.borderColor = 'green';
+        // Ocultar el botón de explicación cuando se muestra la explicación
+        if (!explanation.classList.contains('hidden')) {
+            this.classList.add('hidden-btn'); // Añadir clase para ocultar el botón
         } else {
-            select.style.borderColor = 'red';
-            allCorrect = false;
+            this.classList.remove('hidden-btn'); // Eliminar clase para mostrar el botón nuevamente
         }
     });
+});
 
-    // Verificar inputs
-    inputs.forEach(input => {
-        const userAnswer = input.value;
-        const correctAnswer = input.getAttribute('data-answer');
+// Funcionalidad para el botón "Comprobar"
+document.querySelectorAll('.check-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const problem = this.closest('.problem'); // Encuentra el problema más cercano
+        const selectedAnswer = problem.querySelector('input[type="radio"]:checked'); // Obtiene la respuesta seleccionada
 
-        if (userAnswer == correctAnswer) {
-            input.style.borderColor = 'green';
+        const feedbackContainer = problem.querySelector('.feedback'); // Contenedor de retroalimentación
+
+        if (selectedAnswer) {
+            const correctAnswer = problem.querySelector('.correct-answer'); // Encuentra la respuesta correcta
+
+            // Verificar si la respuesta seleccionada es correcta
+            if (correctAnswer && selectedAnswer.value === correctAnswer.value) {
+                feedbackContainer.textContent = '¡Respuesta correcta! 🎉'; // Mostrar mensaje de éxito
+                feedbackContainer.style.color = 'green'; // Cambiar color a verde
+            } else {
+                feedbackContainer.textContent = 'Respuesta incorrecta. Intenta de nuevo.'; // Mostrar mensaje de error
+                feedbackContainer.style.color = 'red'; // Cambiar color a rojo
+            }
+
         } else {
-            input.style.borderColor = 'red';
-            allCorrect = false;
+            feedbackContainer.textContent = 'Por favor, selecciona una respuesta.'; // Solicitar que elija una opción
+            feedbackContainer.style.color = 'orange'; // Cambiar color a naranja
         }
-    });
 
-    // Mostrar retroalimentación
-    const feedback = document.getElementById('feedback');
-    feedback.style.display = 'block';
-    if (allCorrect) {
-        feedback.textContent = '¡Todas tus respuestas son correctas! 🎉';
-        feedback.style.color = 'green';
-    } else {
-        feedback.textContent = 'Algunas respuestas son incorrectas. Intenta de nuevo.';
-        feedback.style.color = 'red';
-    }
+        feedbackContainer.style.display = 'block'; // Asegurarse de que el mensaje se muestre
+    });
 });

@@ -86,6 +86,12 @@ input:focus {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
+.back {
+  margin-left: -90%;
+  color: #8325a8;
+  font-size: 2rem;
+}
+
 /* Button */
 button {
   padding: 12px 30px;

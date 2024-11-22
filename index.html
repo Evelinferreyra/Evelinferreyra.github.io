@@ -6,6 +6,7 @@
   <title>Calculadora de Logaritmos y Exponentes</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
   <div class="container">
@@ -55,56 +56,96 @@
                 <p><strong>Solución:</strong> Sabemos que <code>10<sup>2</sup> = 100</code>, por lo que <code>log<sub>10</sub>(100) = 2</code>.</p>
             </div>
 
+            <!-- Preguntas-->
             <h2>Práctica Interactiva</h2>
             <p>Resuelve los siguientes logaritmos. Selecciona o introduce tu respuesta y verifica.</p>
 
-            <!-- Pregunta 1 (multiple choice) -->
+            
             <div class="problem">
-                <p><strong>1. ¿Qué es <code>log<sub>3</sub>(27)</code>?</strong></p>
-                <select class="log-select" data-answer="3">
-                    <option value="" disabled selected>Selecciona tu respuesta</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-
-            <!-- Pregunta 2 (multiple choice) -->
-            <div class="problem">
-                <p><strong>2. ¿Qué es <code>log<sub>5</sub>(125)</code>?</strong></p>
-                <select class="log-select" data-answer="3">
-                    <option value="" disabled selected>Selecciona tu respuesta</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-
-            <!-- Pregunta 3 (multiple choice) -->
-            <div class="problem">
-                <p><strong>3. ¿Qué es <code>log<sub>2</sub>(16)</code>?</strong></p>
-                <select class="log-select" data-answer="4">
-                    <option value="" disabled selected>Selecciona tu respuesta</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-
-            <!-- Pregunta 4 (input text) -->
-            <div class="problem">
-                <p><strong>4. ¿Qué es <code>log<sub>10</sub>(1)</code>?</strong></p>
-                <input type="number" class="log-input" data-answer="0" placeholder="Tu respuesta">
-            </div>
-
-            <!-- Pregunta 5 (input text) -->
-            <div class="problem">
-                <p><strong>5. ¿Qué es <code>log<sub>7</sub>(49)</code>?</strong></p>
-                <input type="number" class="log-input" data-answer="2" placeholder="Tu respuesta">
-            </div>
-
-            <button id="checkAnswers">Verificar Respuestas</button>
-            <div id="feedback"></div>
+              <p><strong>1. ¿Cuál de las siguientes es equivalente a \( 2^5 = 32 \)?</strong></p>
+              <ul>
+                  <li><input type="radio" name="q1" value="A" class = "correct-answer"> \( \log_2(32) = 5 \)</li>
+                  <li><input type="radio" name="q1" value="B"> \( \log_5(2) = 32 \)</li>
+                  <li><input type="radio" name="q1" value="C"> \( \log_{32}(5) = 2 \)</li>
+              </ul>
+              <button class="check-btn">Comprobar</button>
+              <div class="feedback" style="display:none;"></div>
+              <button class="explanation-btn">Explicación</button>
+              <div class="explanation hidden">
+                  <p>
+                      Sabemos que 
+                      <span class="greenD">\( b^{c} = a \)</span> es equivalente a 
+                      <span class="goldD">\( \log_{b}(a) = c \)</span>.
+                  </p>
+                  <p>
+                      Con esta equivalencia podemos volver a escribir 
+                      <span class="greenD">\( 2^{5} = 32 \)</span> como 
+                      <span class="goldD">\( \log_{2}(32) = 5 \)</span>.
+                  </p>
+                  <p>
+                      La respuesta es 
+                      <span class="blueD">\( \log_2(32) = 5 \)</span>.
+                  </p>
+              </div>
+          </div>
+      
+          <div class="problem">
+              <p><strong>2. ¿Cuál de las siguientes es equivalente a \( \log_3(27) = 3 \)?</strong></p>
+              <ul>
+                  
+                  <li><input type="radio" name="q2" value="B"> \( 3^2 = 9 \)</li>
+                  <li><input type="radio" name="q2" value="C"> \( 27^3 = 3 \)</li>
+                  <li><input type="radio" name="q2" value="A" class = "correct-answer"> \( 3^3 = 27 \)</li>
+              </ul>
+              <button class="check-btn">Comprobar</button>
+              <div class="feedback" style="display:none;"></div>
+              <button class="explanation-btn">Explicación</button>
+              <div class="explanation hidden">
+                  <p>
+                      Sabemos que 
+                      <span class="greenD">\( b^c = a \)</span> es equivalente a 
+                      <span class="goldD">\( \log_b(a) = c \)</span>.
+                  </p>
+                  <p>
+                      Con esta equivalencia podemos volver a escribir 
+                      <span class="greenD">\( \log_3(27) = 3 \)</span> como 
+                      <span class="blueD">\( 3^3 = 27 \)</span>.
+                  </p>
+                  <p>
+                      La respuesta es 
+                      <span class="goldD">\( 3^3 = 27 \)</span>.
+                  </p>
+              </div>
+          </div>
+      
+          <div class="problem">
+              <p><strong>3. ¿Cuál de las siguientes es equivalente a \( 5^3 = 125 \)?</strong></p>
+              <ul>
+                  
+                  <li><input type="radio" name="q3" value="B"> \( \log_3(5) = 125 \)</li>
+                  <li><input type="radio" name="q3" value="A" class = "correct-answer"> \( \log_5(125) = 3 \)</li>
+                  <li><input type="radio" name="q3" value="C"> \( \log_2(125) = 3 \)</li>
+              </ul>
+              <button class="check-btn">Comprobar</button>
+              <div class="feedback" style="display:none;"></div>
+              <button class="explanation-btn">Explicación</button>
+              <div class="explanation hidden">
+                  <p>
+                      Sabemos que 
+                      <span class="greenD">\( b^c = a \)</span> es equivalente a 
+                      <span class="goldD">\( \log_b(a) = c \)</span>.
+                  </p>
+                  <p>
+                      Con esta equivalencia podemos volver a escribir 
+                      <span class="greenD">\( 5^3 = 125 \)</span> como 
+                      <span class="goldD">\( \log_5(125) = 3 \)</span>.
+                  </p>
+                  <p>
+                      La respuesta es 
+                      <span class="blueD">\( \log_5(125) = 3 \)</span>.
+                  </p>
+              </div>
+          </div>
         </section>
 
         <script src="practic.js"></script>
