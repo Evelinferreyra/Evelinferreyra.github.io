@@ -1,88 +1,123 @@
-// Función para finalizar el examen
-document.getElementById('submitExam').addEventListener('click', function () {
-    const selects = document.querySelectorAll('.exam-select');
-    const inputs = document.querySelectorAll('.exam-input');
-    let allCorrect = true;
-
-    // Verificar selects
-    selects.forEach(select => {
-        const userAnswer = select.value;
-        const correctAnswer = select.getAttribute('data-answer');
-
-        if (userAnswer === correctAnswer) {
-            select.style.borderColor = 'green';
-        } else {
-            select.style.borderColor = 'red';
-            allCorrect = false;
-        }
-        select.disabled = true; // Bloquear selección
-    });
-
-    // Verificar inputs
-    inputs.forEach(input => {
-        const userAnswer = input.value;
-        const correctAnswer = input.getAttribute('data-answer');
-
-        if (userAnswer == correctAnswer) {
-            input.style.borderColor = 'green';
-        } else {
-            input.style.borderColor = 'red';
-            allCorrect = false;
-        }
-        input.disabled = true; // Bloquear edición
-    });
-
-    // Feedback del examen
-    const feedback = document.getElementById('examFeedback');
-    feedback.style.display = 'block';
-    if (allCorrect) {
-        feedback.textContent = '¡Examen completado con éxito! 🎉';
-        feedback.style.color = 'green';
-    } else {
-        feedback.textContent = 'Examen finalizado. Revisa tus respuestas.';
-        feedback.style.color = 'red';
-    }
-
-    // Bloquear el botón de envío y habilitar el de descarga
-    this.disabled = true;
-    document.getElementById('downloadPDF').disabled = false;
-});
-
-// Función para generar PDF con jsPDF
-document.getElementById('downloadPDF').addEventListener('click', function () {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    // Título
-    doc.setFontSize(18);
-    doc.text('Examen de Logaritmos', 10, 10);
-
-    // Contenido del examen
-    const questions = [
-        '1. ¿Qué es log₃(81)? Respuesta seleccionada:',
-        '2. ¿Qué es log₁₀(1000)? Respuesta seleccionada:',
-        '3. Resuelve log₂(32): Respuesta escrita:',
-        '4. Resuelve log₇(1): Respuesta escrita:'
-    ];
-    const selects = document.querySelectorAll('.exam-select');
-    const inputs = document.querySelectorAll('.exam-input');
-    let yPosition = 20;
-
-    // Agregar respuestas seleccionadas
-    selects.forEach((select, index) => {
-        doc.setFontSize(12);
-        const answer = select.value || 'No respondida';
-        doc.text(`${questions[index]} ${answer}`, 10, yPosition);
-        yPosition += 10;
-    });
-
-    // Agregar respuestas escritas
-    inputs.forEach((input, index) => {
-        const answer = input.value || 'No respondida';
-        doc.text(`${questions[selects.length + index]} ${answer}`, 10, yPosition);
-        yPosition += 10;
-    });
-
+document.addEventListener("DOMContentLoaded", function() {
+    // Variables
+    const submitButton = document.getElementById("submitExam");
+    const downloadButton = document.getElementById("downloadPDF");
+    const feedbackDiv = document.getElementById("examFeedback");
+    const problems = document.querySelectorAll(".problem");
     
-    doc.save('Examen_Logaritmos.pdf');
+    // Crear instancia de jsPDF
+    const { jsPDF } = window.jspdf;
+  
+    // Función para verificar respuestas y dar retroalimentación
+    function checkAnswers() {
+      let score = 0;
+  
+      problems.forEach(problem => {
+        const radios = problem.querySelectorAll('input[type="radio"]');
+        const feedback = problem.querySelector('.feedback');
+        let selectedAnswer = null;
+  
+        // Encuentra la respuesta seleccionada
+        radios.forEach(radio => {
+          if (radio.checked) {
+            selectedAnswer = radio;
+          }
+        });
+  
+        // Verifica si la respuesta es correcta
+        if (selectedAnswer && selectedAnswer.classList.contains('correct-answer')) {
+          feedback.textContent = "¡Correcto!";
+          feedback.style.color = "green";
+          score++;
+        } else if (selectedAnswer) {
+          feedback.textContent = "Incorrecto. Intenta de nuevo.";
+          feedback.style.color = "red";
+        }
+  
+        feedback.style.display = "block";
+      });
+  
+      // Muestra el puntaje final y habilita el botón de descarga
+      feedbackDiv.textContent = `Tu puntaje es: ${score} de ${problems.length}`;
+      downloadButton.disabled = false;
+  
+      // Deshabilitar la interacción después de finalizar el examen
+      disableInteraction();
+    }
+  
+    // Función para deshabilitar interacción después de finalizar examen
+    function disableInteraction() {
+      // Deshabilitar todos los radios
+      const allRadios = document.querySelectorAll('input[type="radio"]');
+      allRadios.forEach(radio => {
+        radio.disabled = true;
+      });
+  
+      // Deshabilitar el botón de finalizar examen
+      submitButton.disabled = true;
+    }
+  
+    // Función para generar el PDF
+    function generatePDF() {
+      const doc = new jsPDF();
+      
+      // Cambiar la fuente a una fuente personalizada
+      doc.setFont("times", "normal");
+      doc.setFontSize(14);
+  
+      // Título del examen con un estilo diferente
+      doc.setFontSize(20);
+      doc.text("Examen de Logaritmos y Exponentes", 10, 20);
+      doc.setFontSize(14);
+  
+      let yPosition = 40; // Posición inicial para las preguntas
+  
+      // Recorrer las preguntas y respuestas
+      problems.forEach((problem, index) => {
+        const questionText = problem.querySelector('strong').textContent;
+        const selectedAnswer = problem.querySelector('input[type="radio"]:checked');
+        const feedback = problem.querySelector('.feedback');
+        
+        // Estilo para la pregunta
+        doc.setFont("times", "bold");
+        doc.text(`${index + 1}. ${questionText}`, 10, yPosition);
+        
+        // Respuestas
+        const answers = problem.querySelectorAll('li');
+        answers.forEach((answer, i) => {
+          const answerText = answer.textContent;
+          const isSelected = selectedAnswer && selectedAnswer.value === answer.querySelector('input').value;
+          const isCorrect = answer.querySelector('input').classList.contains('correct-answer');
+          
+          // Marcar respuestas correctas
+          if (isSelected) {
+            if (isCorrect) {
+              doc.setTextColor(0, 128, 0); // Verde para respuestas correctas
+            } else {
+              doc.setTextColor(255, 0, 0); // Rojo para respuestas incorrectas
+            }
+          } else {
+            doc.setTextColor(0, 0, 0); // Texto negro para respuestas no seleccionadas
+          }
+
+          doc.text(`  ${String.fromCharCode(65 + i)}. ${answerText}`, 10, yPosition + 10 + (i * 10));
+        });
+        
+        // Aumentar la posición para la siguiente pregunta
+        yPosition += 30;
+      });
+  
+      // Añadir una sección final con el puntaje
+      doc.setFont("times", "bold");
+      doc.text(`Tu puntaje final es: ${feedbackDiv.textContent}`, 10, yPosition);
+  
+      // Guardar el PDF
+      doc.save("examen_logaritmos.pdf");
+    }
+  
+    // Asociar la función de comprobar respuestas al botón de finalizar examen
+    submitButton.addEventListener("click", checkAnswers);
+  
+    // Habilitar la función de descarga del PDF
+    downloadButton.addEventListener("click", generatePDF);
 });

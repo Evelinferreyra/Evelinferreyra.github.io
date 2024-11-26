@@ -40,3 +40,5 @@ document.querySelectorAll('.check-btn').forEach(button => {
         feedbackContainer.style.display = 'block'; // Asegurarse de que el mensaje se muestre
     });
 });
+
+

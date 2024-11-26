@@ -7,58 +7,74 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
 </head>
 <body>
   <div class="container">
     <!-- Header con animación ondulada -->
     <div class="header-background">
       
-      <h1 class="title">Logaritmos</h1>
+      <h1 class="title">Introducción a logaritmos</h1>
       
     </div>
 
     <!-- Sección de información sobre logaritmos (ahora arriba de los botones) -->
     <section id="info-logaritmo" class="info-logaritmo">
-      <h2>¿Qué es un logaritmo?</h2>
-            <p>Un <strong>logaritmo</strong> responde a la pregunta: ¿a qué exponente debo elevar un número base para obtener un número dado?</p>
-            <p>Por ejemplo: el logaritmo en base 10 de 1000 es 3, porque 10<sup>3</sup> = 1000.</p>
-            <p>En términos matemáticos: <code>log<sub>10</sub>(1000) = 3</code>.</p>
-
-            <h2>Propiedades de los Logaritmos</h2>
+        <h1>¿Qué es un logaritmo?</h1>
+        <p>Los logaritmos son otra manera de pensar en exponentes.</p>
+        <p>Por ejemplo, sabemos que <span class="blueD">2</span> elevado a la <span class="greenD">4</span> es igual a <span class="goldD">16</span>. Esto se expresa con la ecuación exponencial</p>
+        <p></p>
+        <p><span class="blueD">2</span><sup><span class="greenD">4</span></sup> = <span class="goldD">16</span>.</p>
+        <p>Ahora supongamos que nos preguntan: "¿<span class="blueD">2</span> elevado a qué potencia es igual a <span class="goldD">16</span>?"</p>
+        <p>La respuesta sería: <span class="greenD">4</span>. Esto se expresa con la ecuación logarítmica</p>
+        <p><span class="greenD">log</span><sub><span class="blueD">2</span></sub>(<span class="goldD">16</span>) = <span class="greenD">4</span> (y se lee como "logaritmo en base dos de dieciséis es cuatro").</p>
+        <p><span class="blueD">2</span><sup><span class="greenD">4</span></sup> = <span class="goldD">16</span> <span class="greenD">⇔</span> <span class="greenD">log</span><sub><span class="blueD">2</span></sub>(<span class="goldD">16</span>) = <span class="greenD">4</span></p>
+        <p>Ambas ecuaciones describen la misma relación entre los números <span class="blueD">2</span>, <span class="greenD">4</span>, y <span class="goldD">16</span>; donde <span class="blueD">2</span> es la base y <span class="greenD">4</span> es el exponente.</p>
+        <p>La diferencia es que la forma exponencial aísla la potencia <span class="goldD">16</span>, y la forma logarítmica aísla el exponente <span class="greenD">4</span>.</p>
+        <p>He aquí más ejemplos de ecuaciones logarítmicas y exponenciales equivalentes:</p>
+    
+        <table>
+            <tr>
+                <th>Forma logarítmica</th>
+                <th>Forma exponencial</th>
+            </tr>
+            <tr>
+                <td><span class="greenD">log</span><sub><span class="blueD">2</span></sub>(<span class="goldD">8</span>) = <span class="greenD">3</span></td>
+                <td><span class="blueD">2</span><sup><span class="greenD">3</span></sup> = <span class="goldD">8</span></td>
+            </tr>
+            <tr>
+                <td><span class="greenD">log</span><sub><span class="blueD">3</span></sub>(<span class="goldD">81</span>) = <span class="greenD">4</span></td>
+                <td><span class="blueD">3</span><sup><span class="greenD">4</span></sup> = <span class="goldD">81</span></td>
+            </tr>
+            <tr>
+                <td><span class="greenD">log</span><sub><span class="blueD">5</span></sub>(<span class="goldD">25</span>) = <span class="greenD">2</span></td>
+                <td><span class="blueD">5</span><sup><span class="greenD">2</span></sup> = <span class="goldD">25</span></td>
+            </tr>
+        </table>
+  
+        <h2>Definición de un Logaritmo</h2>
+        <p>
+            La definición formal de un logaritmo es:
+            \[ \log_b(a) = c \quad \iff \quad b^c = a \]
+        </p>
+        
+        <p>
+            Ambas ecuaciones describen la misma relación entre <span class="goldD">a,</span> <span class="blueD">b,</span> y <span class="greenD">c</span>
             <ul>
-                <li><strong>Producto:</strong> <code>log<sub>b</sub>(MN) = log<sub>b</sub>(M) + log<sub>b</sub>(N)</code></li>
-                <li><strong>Cociente:</strong> <code>log<sub>b</sub>(M/N) = log<sub>b</sub>(M) - log<sub>b</sub>(N)</code></li>
-                <li><strong>Potencia:</strong> <code>log<sub>b</sub>(M<sup>n</sup>) = n * log<sub>b</sub>(M)</code></li>
-                <li><strong>Cambio de Base:</strong> <code>log<sub>b</sub>(M) = log(M) / log(b)</code></li>
+                <li><span class="blueD">\( b \)</span>: es la base</li>
+                <li><span class="greenD">\( c \)</span>: es el exponente</li>
+                <li><span class="goldD">\( a \)</span>: es el valor resultante</li>
             </ul>
+        </p>
 
-            <h2>Ejemplos de Logaritmos</h2>
-            <div class="example">
-                <h3>Ejemplo 1</h3>
-                <p><strong>Problema:</strong> ¿Qué es <code>log<sub>2</sub>(8)</code>?</p>
-                <p><strong>Solución:</strong> Sabemos que <code>2<sup>3</sup> = 8</code>, por lo que <code>log<sub>2</sub>(8) = 3</code>.</p>
-            </div>
-            <div class="example">
-                <h3>Ejemplo 2</h3>
-                <p><strong>Problema:</strong> ¿Qué es <code>log<sub>10</sub>(100)</code>?</p>
-                <p><strong>Solución:</strong> Sabemos que <code>10<sup>2</sup> = 100</code>, por lo que <code>log<sub>10</sub>(100) = 2</code>.</p>
-            </div>
-
-            <h2>Ejemplos de Logaritmos</h2>
-            <div class="example">
-                <h3>Ejemplo 1</h3>
-                <p><strong>Problema:</strong> ¿Qué es <code>log<sub>2</sub>(8)</code>?</p>
-                <p><strong>Solución:</strong> Sabemos que <code>2<sup>3</sup> = 8</code>, por lo que <code>log<sub>2</sub>(8) = 3</code>.</p>
-            </div>
-            <div class="example">
-                <h3>Ejemplo 2</h3>
-                <p><strong>Problema:</strong> ¿Qué es <code>log<sub>10</sub>(100)</code>?</p>
-                <p><strong>Solución:</strong> Sabemos que <code>10<sup>2</sup> = 100</code>, por lo que <code>log<sub>10</sub>(100) = 2</code>.</p>
-            </div>
+        <h2>Obsevación</h2>
+        <p>
+            Al volver a escribir una ecuación exponencial en forma de log, o una ecuación de log en forma exponencial, es útil recordar que la base del logaritmo es la misma que la base del exponente.
+        </p>
 
             <!-- Preguntas-->
-            <h2>Práctica Interactiva</h2>
-            <p>Resuelve los siguientes logaritmos. Selecciona o introduce tu respuesta y verifica.</p>
+            <h2>Comprueba tu comprensión</h2>
+            <p>En los siguientes problemas convertirás entre formas exponenciales y logarítmicas de ecuaciones.</p>
 
             
             <div class="problem">
@@ -153,7 +169,7 @@
 
     <!-- Botones con animación -->
     <div class="buttons">
-      <a href="exam.html" class="button">
+      <a href="examen.html" class="button">
         <span class="star-icon">➫</span> Examen de prueba
       </a>
       <a href="exponente.html" class="button">

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Logaritmos y Exponentes</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header con animación ondulada -->
+    <div class="header-background">
+      <h1 class="title">Examen de prueba</h1>
+    </div>
+    <!-- Sección de preguntas -->
+    <section id="info-logaritmo" class="info-logaritmo">
+        <a href="index.html" class="back">
+            <span class="star-icon"> ⤶ </span> 
+        </a>
+      <h2>Comprueba tu comprensión</h2>
+      <p>En los siguientes problemas convertirás entre formas exponenciales y logarítmicas de ecuaciones.</p>
+
+      <!-- Preguntas-->
+      <div class="problem">
+        <p><strong>1. ¿Cuál es la forma logarítmica de \( 2^6 = 64 \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q1" value="A" class="correct-answer"> \( \log_2(64) = 6 \)</li>
+            <li><input type="radio" name="q1" value="B"> \( \log_6(64) = 2 \)</li>
+            <li><input type="radio" name="q1" value="C"> \( \log_2(64) = 5 \)</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2. ¿Cuál de las siguientes es equivalente a \( \log_4(16) = 2 \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q2" value="B"> \( 4^2 = 16 \)</li>
+            <li><input type="radio" name="q2" value="C"> \( \log_2(16) = 4 \)</li>
+            <li><input type="radio" name="q2" value="A" class="correct-answer"> \( 4^2 = 16 \)</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3. ¿Qué valor tiene \( \log_10(1000) \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q3" value="B"> \( 3 \)</li>
+            <li><input type="radio" name="q3" value="A" class="correct-answer"> \( 3 \)</li>
+            <li><input type="radio" name="q3" value="C"> \( 1000 \)</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4. ¿Cuál es el valor de \( \log_5(125) \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q4" value="A" class="correct-answer"> 3</li>
+            <li><input type="radio" name="q4" value="B"> 2</li>
+            <li><input type="radio" name="q4" value="C"> 4</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>5. ¿Qué valor tiene \( \log_2(8) \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q5" value="A"> 4</li>
+            <li><input type="radio" name="q5" value="B" class="correct-answer"> 3</li>
+            <li><input type="radio" name="q5" value="C"> 2</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>6. ¿Cuál es la forma exponencial de \( \log_7(49) = 2 \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q6" value="A" class="correct-answer"> \( 7^2 = 49 \)</li>
+            <li><input type="radio" name="q6" value="B"> \( 49^2 = 7 \)</li>
+            <li><input type="radio" name="q6" value="C"> \( 7^4 = 49 \)</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>7. ¿Cuál es la base de la ecuación \( \log_x(81) = 4 \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q7" value="A"> 2</li>
+            <li><input type="radio" name="q7" value="B" class="correct-answer"> 3</li>
+            <li><input type="radio" name="q7" value="C"> 5</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>8. ¿Qué valor tiene \( \log_2(32) \)?</strong></p>
+        <ul>
+            <li><input type="radio" name="q8" value="A" class="correct-answer"> 5</li>
+            <li><input type="radio" name="q8" value="B"> 4</li>
+            <li><input type="radio" name="q8" value="C"> 6</li>
+        </ul>
+        <div class="feedback" style="display:none;"></div>
+      </div>
+
+    </section>
+
+    <script src="exam.js"></script>
+
+    <!-- Botones con animación -->
+    <div class="buttons">
+        <button class="fin" id="submitExam">Finalizar Examen</button>
+        <button class="pdf" id="downloadPDF" disabled>Descargar Examen</button>
+        <div id="examFeedback"></div>
+    </div>
+  </div>
+</body>
+</html>

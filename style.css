@@ -45,6 +45,32 @@ body {
 }
 
 
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
+th, td {
+  border: 1px solid #504a4a;
+  padding: 8px;
+}
+th {
+  background-color: #3c065285;
+  font-weight: bold;
+}
+.log {
+  color: #007d75;
+}
+.base {
+  color: #c0392b;
+}
+.result {
+  color: #d35400;
+}
+.exp {
+  color: #2980b9;
+}
 
 /* Botones */
 .buttons {
@@ -75,10 +101,6 @@ body {
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
-.star-icon {
-  font-size: 1.2rem;
-  color: #000000;
-}
 
 
 /* Sección de información sobre logaritmos */
@@ -124,6 +146,8 @@ body {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
+
 .check-btn {
   margin-top: 10px;
   padding: 5px 10px;
@@ -148,7 +172,7 @@ body {
   padding: 0px;
   border: none;
   margin-top: 20px;
-  color: #e1e0e6;
+  color: #4b0574;
   cursor: pointer;
   display: block;
   clear: both;
@@ -196,11 +220,59 @@ body {
 }
 
 
-.example {
-  background:#8325a846;
-  border-left: 5px solid #fefcff;
+.fin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #8325a8, #08012e);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.fin:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #08012e, #8325a8);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+
+}
+
+.pdf{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #8325a8, #08012e);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+#examFeedback {
+  margin-top: 1rem;
   padding: 1rem;
-  margin: 1rem 0;
+  background: #fef2e2;
+  border-left: 5px solid #ffa726;
+  display: none;
+  font-size: 1rem;
+}
+
+.back {
+  color: #8325a8;
+  font-size: 2rem;
 }
 
 /* Animación para la entrada de la sección */
@@ -251,3 +323,4 @@ body {
     text-align: center;
   }
 }
+
